@@ -5,14 +5,25 @@ A Ruby implementation of some mathematical logic concepts and algorithms.
 It makes no attempts to be computationally efficient, it strives to be handy instead.
 
 ## Setup
+logical is built as a gem for Ruby apps, but if you just wish to execute it in an interactive session there's a convenience standalone Docker image available.
+
 ### As a gem
-As you would expect, add:
+Add:
 
-    gem 'logical'
-to your `Gemfile`.
+    gem 'logical', '~> 0.1.0'
 
-### Stand-alone
-(coming soon)
+to your application's `Gemfile` or run:
+
+    gem install logical
+(See [logical on RubyGems](https://rubygems.org/gems/logical))
+
+### As a docker container
+> Requires [Docker](https://www.docker.com/).
+
+Run:
+
+    docker build -t logical .
+    docker run -it logical
 
 ## Usage
 Build a formula (sorry, no parsing yet):
@@ -48,20 +59,20 @@ Get some info:
 
 ## Contributing
 ### Setup
-Build the Docker image:
+Build the Docker development image:
 
-    docker build -t logical .
+    docker build -f Dockerfile.dev -t logical-dev .
 
-Launch a Docker container using the image, mounting the project directory:
+Launch a Docker container mounting the project directory:
 
-    docker run --name=logical -d --mount type=bind,src=${PWD},target=/var/app logical
+    docker run --name=logical-dev -d --mount type=bind,src=${PWD},target=/var/app logical-dev
 
 Implement your changes.
 
 ### Executing Tests
 Launch Rake within the Docker container bash shell:
 
-    docker exec -ti logical bash -c rake
+    docker exec -ti logical-dev bash -c rake
 
 ## License
 

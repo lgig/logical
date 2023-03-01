@@ -1,0 +1,5 @@
+FROM ruby:3.2.1
+
+WORKDIR /var/app
+
+CMD ["tail", "-f", "/dev/null"]
