@@ -1,5 +1,4 @@
 # logical
-
 A Ruby implementation of some mathematical logic concepts and algorithms.
 
 It makes no attempts to be computationally efficient, it strives to be handy instead.
@@ -15,7 +14,7 @@ Add:
 to your application's `Gemfile` or run:
 
     gem install logical
-(See [logical on RubyGems](https://rubygems.org/gems/logical))
+(See [RubyGems](https://rubygems.org/gems/logical))
 
 ### As a docker container
 > Requires [Docker](https://www.docker.com/).
@@ -76,4 +75,4 @@ Launch Rake within the Docker container bash shell:
 
 ## License
 
-Logical is released under the [MIT License](https://opensource.org/licenses/MIT).
+logical is released under the [MIT License](https://opensource.org/licenses/MIT).
