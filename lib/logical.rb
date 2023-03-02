@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
+require_relative 'logical/interpretation'
+require_relative 'logical/evaluation'
+require_relative 'logical/algorithms/truth_table'
+require_relative 'logical/formulas/conjunction'
+require_relative 'logical/formulas/disjunction'
+require_relative 'logical/formulas/implication'
+require_relative 'logical/formulas/negation'
+require_relative 'logical/formulas/literal'
+
 module Logical
-  require 'logical/interpretation'
-  require 'logical/evaluation'
-
-  require 'logical/algorithms/truth_table'
-
-  require 'logical/formulas/conjunction'
-  require 'logical/formulas/disjunction'
-  require 'logical/formulas/implication'
-  require 'logical/formulas/negation'
-  require 'logical/formulas/literal'
 end
