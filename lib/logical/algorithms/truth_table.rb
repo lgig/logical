@@ -2,7 +2,7 @@
 
 module Logical
   class TruthTable
-  attr_reader :evaluations
+    attr_reader :evaluations
     
     def initialize(formula)
       @formula = formula
