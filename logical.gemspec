@@ -8,14 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Luka Giga']
   s.licenses    = ['MIT']
   s.homepage    = 'https://github.com/lgig/logical'
+  s.files       = Dir['{lib}/**/*.rb', 'bin/*', 'MIT-LICENSE', '*.md']
+
   s.add_development_dependency 'minitest', '~> 5.8'
-  s.files       = ['lib/logical.rb',
-                   'lib/logical/interpretation.rb',
-                   'lib/logical/evaluation.rb',
-                   'lib/logical/formulas/conjunction.rb',
-                   'lib/logical/formulas/disjunction.rb',
-                   'lib/logical/formulas/implication.rb',
-                   'lib/logical/formulas/negation.rb',
-                   'lib/logical/formulas/literal.rb',
-                   'lib/logical/algorithms/truth_table.rb',]
 end
