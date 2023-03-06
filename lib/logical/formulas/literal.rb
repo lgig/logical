@@ -5,6 +5,8 @@ module Logical
     attr_reader :letter
   
     def initialize(letter)
+      raise ArgumentError, 'Argument must be a symbol.' unless letter.is_a? Symbol
+
       @letter = letter
     end
   

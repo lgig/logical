@@ -27,9 +27,9 @@ Run:
 ## Usage
 Build a formula (sorry, no parsing yet):
 
-    p = Literal.new('p')
-    q = Literal.new('q')
-    r = Literal.new('r')
+    p = Literal.new(:p)
+    q = Literal.new(:q)
+    r = Literal.new(:r)
 
     f = Implication.new(Conjunction.new(p, q), r)
 Print it:
