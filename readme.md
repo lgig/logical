@@ -36,6 +36,9 @@ Print it:
 
     f.to_s    # "((p∧q)→r)"
 
+Get its rank:
+
+    f.rank    # => 2
 Build a truth table for it and print it:
 
     t = TruthTable.new(f)

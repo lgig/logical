@@ -23,5 +23,9 @@ module Logical
     def ==(other)
       other.class == Literal && other.letter == letter
     end
+
+    def rank
+      0
+    end
   end
 end

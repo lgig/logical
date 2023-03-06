@@ -18,5 +18,9 @@ module Logical
     def to_s
       "(#{@f.to_s}∨#{@g.to_s})"
     end
+    
+    def rank
+      @f.rank + @g.rank + 1
+    end
   end
 end

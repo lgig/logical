@@ -17,5 +17,9 @@ module Logical
     def literals
       @f.literals
     end
+
+    def rank
+      @f.rank + 1
+    end
   end
 end
