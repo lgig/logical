@@ -23,7 +23,7 @@ module Logical
     end
   
     def ==(other)
-      other.class == Literal && other.letter == letter
+      other.is_a?(Literal) && other.letter == @letter
     end
 
     def rank

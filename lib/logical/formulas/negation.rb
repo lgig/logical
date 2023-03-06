@@ -2,6 +2,8 @@
 
 module Logical
   class Negation
+    attr_reader :f
+
     def initialize(f)
       @f = f
     end
@@ -20,6 +22,10 @@ module Logical
 
     def rank
       @f.rank + 1
+    end
+
+    def ==(other)
+      other.is_a?(Negation) && other.letter = @letter
     end
   end
 end

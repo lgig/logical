@@ -2,6 +2,8 @@
 
 module Logical
   class Implication
+    attr_reader :f, :g
+
     def initialize(f, g)
       @f = f
       @g = g
@@ -22,6 +24,10 @@ module Logical
     
     def rank
       @f.rank + @g.rank + 1
+    end
+
+    def ==(other)
+      other.is_a?(Implication) && other.f == @f && other.g == @g
     end
   end
 end

@@ -32,13 +32,18 @@ Build a formula (sorry, no parsing yet):
     r = Literal.new(:r)
 
     f = Implication.new(Conjunction.new(p, q), r)
-Print it:
+Convert it into a String:
 
     f.to_s    # "((p∧q)→r)"
 
 Get its rank:
 
     f.rank    # => 2
+
+Check for equality:
+
+    f == p    # => false
+    f == f    # => true
 Build a truth table for it and print it:
 
     t = TruthTable.new(f)
