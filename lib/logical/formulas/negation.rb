@@ -25,7 +25,7 @@ module Logical
     end
 
     def ==(other)
-      other.is_a?(Negation) && other.letter = @letter
+      other.is_a?(Negation) && other.f == @f
     end
   end
 end
