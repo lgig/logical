@@ -23,11 +23,11 @@ module Logical
       case token
       when '('
         lexe_binary(tokens)        
-      when '¬'
-        Logical::Negation.new(lexe(tokens))
+      when Negation::SYMBOL
+        Negation.new(lexe(tokens))
       else
         if token.match?(/[[:alpha:]]/)
-          Logical::Literal.new(token.to_sym)
+          Literal.new(token.to_sym)
         else
           raise "Unknown token: #{token}"
         end
@@ -43,12 +43,12 @@ module Logical
       raise "Expected ')' instead of: #{trailer}" unless trailer == ')'
 
       case operator
-      when '∧'
-        Logical::Conjunction.new(left, right)
-      when '∨'
-        Logical::Disjunction.new(left, right)
-      when '→'
-        Logical::Implication.new(left, right)
+      when Conjunction::SYMBOL
+        Conjunction.new(left, right)
+      when Disjunction::SYMBOL
+        Disjunction.new(left, right)
+      when Implication::SYMBOL
+        Implication.new(left, right)
       else
         raise "Unknown operator: #{operator}"
       end

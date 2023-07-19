@@ -2,6 +2,8 @@
 
 module Logical
   class Conjunction
+    SYMBOL = '∧'
+
     attr_reader :f, :g
 
     def initialize(f, g)
@@ -18,7 +20,7 @@ module Logical
     end
   
     def to_s
-      "(#{@f.to_s}∧#{@g.to_s})"
+      "(#{@f.to_s}#{SYMBOL}#{@g.to_s})"
     end
     
     def rank
