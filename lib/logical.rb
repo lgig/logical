@@ -8,6 +8,7 @@ require_relative 'logical/formulas/disjunction'
 require_relative 'logical/formulas/implication'
 require_relative 'logical/formulas/negation'
 require_relative 'logical/formulas/literal'
+require_relative 'logical/parsers/naive_parser'
 
 module Logical
 end

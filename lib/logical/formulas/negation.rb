@@ -2,6 +2,8 @@
 
 module Logical
   class Negation
+    SYMBOL = '¬'
+
     attr_reader :f
 
     def initialize(f)
@@ -13,7 +15,7 @@ module Logical
     end
     
     def to_s
-      "¬(#{@f.to_s})"
+      "#{SYMBOL}(#{@f.to_s})"
     end
   
     def literals
@@ -25,7 +27,7 @@ module Logical
     end
 
     def ==(other)
-      other.is_a?(Negation) && other.letter = @letter
+      other.is_a?(Negation) && other.f == @f
     end
   end
 end
