@@ -9,7 +9,7 @@ logical is built as a gem for Ruby apps, but if you just wish to execute it in a
 ### As a gem
 Add:
 
-    gem 'logical', '~> 0.1.0'
+    gem 'logical'
 
 to your application's `Gemfile` or run:
 
@@ -19,35 +19,52 @@ to your application's `Gemfile` or run:
 ### As a docker container
 > Requires [Docker](https://www.docker.com/).
 
-Run:
+Clone the repository and run:
 
     docker build -t logical .
     docker run -it logical
 
 ## Usage
-Build a formula (sorry, no parsing yet):
+Require the gem:
+
+    require 'logical'
+
+Include the module:
+
+    include 'Logical'
+
+Parse a formula:
+
+    f = NaiveParser.parse('((p∧q)→r)')
+
+> NaiveParser requires formulas to be enclosed within parentheses (i.e `(p∧q)`, not `p∧q`).
+
+Alternatively, build a formula:
 
     p = Literal.new(:p)
     q = Literal.new(:q)
     r = Literal.new(:r)
 
     f = Implication.new(Conjunction.new(p, q), r)
-Convert it into a String:
 
-    f.to_s    # "((p∧q)→r)"
+Serialize it:
+
+    f.to_s    # '((p∧q)→r)'
 
 Get its rank:
 
     f.rank    # => 2
 
-Check for equality:
+Check for equality (not equivalence):
 
     f == p    # => false
     f == f    # => true
+
 Build a truth table for it and print it:
 
     t = TruthTable.new(f)
     puts t.evaluations.map(&:to_s)
+
 Output:
 
     {"p"=>true, "q"=>true, "r"=>true} ⇒ ((p∧q)→r) = true
@@ -58,6 +75,7 @@ Output:
     {"p"=>false, "q"=>true, "r"=>false} ⇒ ((p∧q)→r) = true
     {"p"=>false, "q"=>false, "r"=>true} ⇒ ((p∧q)→r) = true
     {"p"=>false, "q"=>false, "r"=>false} ⇒ ((p∧q)→r) = true
+
 Get some info:
 
     t.valid?        # false
